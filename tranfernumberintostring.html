@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tranfer number into string</title>
+</head>
+<body>
+<input type="button" onclick="number()" >
+<script>
+     function number() {
+         let number=prompt('enter 9 or less than 9 number');
+         alert(tranfer(number));
+
+     }
+     function string(num) {
+         switch (num) {
+             case 0: return "khong";
+             case 1: return "mot";
+             case 2: return "hai";
+             case 3: return "ba";
+             case 4: return "bon";
+             case 5: return "nam";
+             case 6: return "sau";
+             case 7: return "bay";
+             case 8: return "tam";
+             case 9: return "chin";
+             break;
+             default: return "khong ro so";
+             break ;
+         }
+     }
+     function tranfer(input) {
+         let tramtrieu = Math.floor(input % 100000000);
+         let chuctrieu = Math.floor((input % 100000000)/ 10000000);
+         let trieu = Math.floor((input % 10000000) / 1000000);
+         let tramng = Math.floor((input % 1000000) / 100000);
+         let chucng = Math.floor((input % 100000) / 10000);
+         let ngan = Math.floor((input % 10000) / 1000);
+         let tram = Math.floor((input % 1000) / 100);
+         let chuc = Math.floor((input % 100) / 10);
+         let donvi = Math.floor(input % 10);
+         let str = "";
+         str += string(tramtrieu) + " tram ";
+         str += string(chuctrieu) + " muoi ";
+         str += string(trieu) + " trieu ";
+         str += string(tramng) + " tram ";
+         str += string(chucng) + " muoi ";
+         str += string(ngan) + " nghin ";
+         str += string(tram) + " tram ";
+         str += string(chuc) + " muoi ";
+         str += string(donvi);
+         return str;
+     }
+</script>
+</body>
+</html>
