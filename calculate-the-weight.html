@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculate the weight </title>
+        <p>input the to calculate the weight :</p>
+        <p>weight :</p>
+        </head>
+        <body>
+        <div class="form">
+            <div class="input">
+        <input type="text" id="weight" name="weight">
+        <p>height :</p>
+        <input type="text" id="height" name="height">
+        <button onclick = "getresult()" >check</button>
+    </div>
+    <div class="result">
+        <p>this is the result :</p>
+        <input type="text" id= "result" name="result">
+    </div>
+</div>
+<script>
+    function getresult() {
+        let weight =  parseFloat(document.getElementById('weight').value);
+        let height =  parseFloat(document.getElementById('height').value);
+        let BMI = weight/(height*height);
+        let result="" ;
+        if (BMI < 18.5) {
+            result = "underweight";
+        }else if (BMI >=18.5 && BMI<25.0){
+            result = "normal";
+        }else if (BMI >=25.0 && BMI<30.0){
+            result = "overweight";
+        }else {
+            result = "obese";
+        }
+        document.getElementById('result').value = result;
+
+
+
+
+
+    }
+</script>
+</body>
+</html>
