@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>“What is the “official” name of JavaScript?”</p>
+<p>enter your answer :???</p>
+<input type="text" id="anwser" name="anwser">
+<input type="button" onclick="check()">
+<input type="text" id="result" name="result">
+<script>
+    function check(){
+        let answer=document.getElementById("anwser").value;
+        let key="ECMAScript";
+        let result;
+        if (answer==key){
+            document.getElementById("result").value="Right!";
+
+        }else {
+            document.getElementById("result").value="didnt khow "
+        }
+    }
+</script>
+</body>
+</html>

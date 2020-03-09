@@ -12,37 +12,37 @@
 <p>diện tích là :</p><input id="dientich" type="text" readonly><br>
 <p>chu vi là :</p><input id="chuvi" type="text" readonly><br>
 <input type="button" onclick="result()" value="kết quả "><br>
+function result() {
+let a=parseFloat(document.getElementById("a").value);
+let b=parseFloat(document.getElementById("b").value);
+let c=parseFloat(document.getElementById("c").value);
+if ((a+b)>c||(a+c)>b||(b+c)>a){
+
+if (a*a === b*b+c*c||b*b === a*a+c*c||c*c===a*a+b*b){
+document.getElementById("tamgiac").value="đây là tam giác vuông";
+}else if (a===b===c){
+document.getElementById("tamgiac").value="đây là tam giác đều";
+}else if (a===b || a===c || b===c){
+document.getElementById("tamgiac").value="đây là tam giác cân";
+}else if (a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a+b*b){
+document.getElementById("tamgiac").value="đây là tam giác tù";
+}else {
+document.getElementById("tamgiac").value="đây là tam giác nhọn";
+}
+}else{
+document.getElementById("tamgiac").value="đây không phải tam giác ";
+}
+let chuvi=a+b+c;
+document.getElementById("chuvi").value=chuvi;
+let p=chuvi/2;
+let dientich=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+document.getElementById("dientich").value=dientich;
+}
+
+
+
 <script>
 
-    function result() {
-        let a=parseFloat(document.getElementById("a").value);
-        let b=parseFloat(document.getElementById("b").value);
-        let c=parseFloat(document.getElementById("c").value);
-        if ((a+b)>c||(a+c)>b||(b+c)>a){
-
-            if (a*a === b*b+c*c||b*b === a*a+c*c||c*c===a*a+b*b){
-                document.getElementById("tamgiac").value="đây là tam giác vuông";
-            }else if (a===b===c){
-                document.getElementById("tamgiac").value="đây là tam giác đều";
-            }else if (a===b || a===c || b===c){
-                document.getElementById("tamgiac").value="đây là tam giác cân";
-            }else if (a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a+b*b){
-                document.getElementById("tamgiac").value="đây là tam giác tù";
-            }else {
-                document.getElementById("tamgiac").value="đây là tam giác nhọn";
-            }
-        }else{
-            document.getElementById("tamgiac").value="đây không phải tam giác ";
-        }
-        let chuvi=a+b+c;
-        document.getElementById("chuvi").value=chuvi;
-        let p=chuvi/2;
-        let dientich=Math.sqrt(p*(p-a)*(p-b)*(p-c));
-        document.getElementById("dientich").value=dientich;
-
-
-
-    }
 
 </script>
 

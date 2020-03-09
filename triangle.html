@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>app triangle math</title>
+    <style>
+        table {
+            background-color: chocolate;
+            color: antiquewhite;
+            margin-left: 500px ;
+        }
+        td {
+
+        }
+    </style>
+</head>
+<body>
+      <table border="1">
+          <tr>
+              <td colspan="2"><h1>app triangle math </h1></td>
+          </tr>
+          <tr>
+              <td>input a : </td>
+              <td><input type="text" name="input-corner-a" id="corner-a"></td>
+          </tr>
+          <tr>
+              <td>input b : </td>
+              <td><input type="text" name="input-corner-b" id="corner-b"></td>
+          </tr>
+          <tr>
+              <td>input c : </td>
+              <td><input type="text" name="input-corner-c" id="corner-c"></td>
+          </tr>
+          <tr>
+              <td> <input type="button" onclick="triangle()" name="what-triangle" value="triangle"> </td>
+              <td> <input type="text" id="triangle" name="the-triangle-is" > </td>
+          </tr>
+          <tr>
+              <td> <input type="button" onclick="acreage()" name="what-acreage" value="acreage"> </td>
+              <td> <input type="text" id="acreage" name="the-acreage-is" > </td>
+          </tr>
+          <tr>
+              <td> <input type="button" onclick="perimeter()" name="what-perimeter" value="perimeter"> </td>
+              <td> <input type="text" id="perimeter" name="the-perimeter-is"> </td>
+          </tr>
+      </table>
+<script>
+    function triangle() {
+        let a=parseFloat(document.getElementById("corner-a").value);
+        let b=parseFloat(document.getElementById("corner-b").value);
+        let c=parseFloat(document.getElementById("corner-c").value);
+        let result="";
+        if ((a+b)>c||(a+c)>b||(b+c)>a){
+
+            if (a*a === b*b+c*c||b*b === a*a+c*c||c*c===a*a+b*b){
+                result = "đây là tam giác vuông";
+            }else if (a===b===c){
+                result = "đây là tam giác đều";
+            }else if (a===b || a===c || b===c){
+                result = "đây là tam giác cân";
+            }else if (a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a+b*b){
+                result = "đây là tam giác tù";
+            }else {
+                result = "đây là tam giác nhọn";
+            }
+        }else{
+            result = "đây không phải tam giác ";
+        }
+        document.getElementById("triangle").value=result;
+    }
+    function acreage(){
+        let a=parseFloat(document.getElementById("corner-a").value);
+        let b=parseFloat(document.getElementById("corner-b").value);
+        let c=parseFloat(document.getElementById("corner-c").value);
+        let acreage=a+b+c;
+        document.getElementById("acreage").value=acreage;
+
+    }
+    function perimeter() {
+        let a=parseFloat(document.getElementById("corner-a").value);
+        let b=parseFloat(document.getElementById("corner-b").value);
+        let c=parseFloat(document.getElementById("corner-c").value);
+        let p=a+b+c;
+        let perimeter=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        document.getElementById("perimeter").value=perimeter;
+    }
+</script>
+</body>
+</html>
