@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="m" onkeyup="calsum()">
+<input type="text" id="n" onkeyup="calsum()">
+<span id="sum"></span>
+<script>
+    function calsum() {
+        let m = document.getElementById('m');
+            m = Number.parseInt(m.value);
+        let n = document.getElementById('n');
+            n = Number.parseInt(n.value);
+        let s = 0 ,i;
+        for (i=m;i<=n;i++){
+            if(i%2==0)
+                s += i;
+            document.getElementById('sum').innerHTML=" "+s;
+        }
+    }
+    function kiemtrasochinhphuong() {
+
+    }
+</script>
+</body>
+</html>

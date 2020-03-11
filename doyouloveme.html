@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .contaner{
+            width: 800px;
+            height: 500px;
+            background-color: cadetblue;
+        }
+        .main{
+            align-content: center;
+
+        }
+        #no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="contaner">
+    <div class="main">
+        <p><h1>do you love me </h1></p>
+        <input type="button" id="yes" value="yes" onclick="love()">
+        <input type="button" id="no" value="no" onmouseover="move()">
+    </div>
+</div>
+
+<script>
+    function move() {
+        document.getElementById('no').style.top='5px';
+        document.getElementById('no').style.bottom='5px';
+        document.getElementById('no').style.left='5px';
+        document.getElementById('no').style.right='5px';
+    }
+    function love() {
+        alert('<3')
+
+    }
+</script>
+</body>
+</html>

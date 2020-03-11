@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculate the prime</title>
+</head>
+<body>
+<input type="text" onkeyup="startingpoint()" id="starting">
+<input type="text" onkeyup="startingpoint()" id="ending">
+<input type="text" id="calsumresult">
+<script>
+    function startingpoint() {
+        let starting=parseInt(document.getElementById('starting').value);
+        let endingpoint=parseInt(document.getElementById('ending').value);
+        let sum;
+            if (starting>1){
+                for (i=starting;i<endingpoint;i++){
+                    if (i % 2 == 0) {
+                        sum += i;
+                    }
+
+                }
+                document.getElementById('calsumresult').innerHTML === sum;
+            }
+            else
+                alert('not valiable');
+
+
+    }
+</script>
+</body>
+</html>
